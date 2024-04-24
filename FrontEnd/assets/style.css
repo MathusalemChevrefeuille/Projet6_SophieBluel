@@ -186,3 +186,26 @@ footer nav ul {
 	margin: 2em
 }
 
+/*Filters*/
+
+.filters {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 50px;
+}
+
+.filters > button {
+	font-family: Syne;
+	font-size: 16px;
+	border-radius: 60px;
+	padding: 10px 20px 10px 20px;
+	color: #1D6154;
+	background-color: white;
+	border-color: #1D6154;
+}
+
+.filters > .selected {
+	background-color: #1D6154;
+	color: white;
+}
