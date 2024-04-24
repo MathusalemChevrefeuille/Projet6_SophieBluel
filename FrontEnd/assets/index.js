@@ -1,8 +1,7 @@
 const gallery = document.querySelector(".gallery")
 async function addallworks(){
-    let works
     const response = await fetch("http://localhost:5678/api/works")
-    works = await response.json()
+    const works = await response.json()
     gallery.innerHTML = ""
     for(let i = 0;i < works.length; i++){
         const figure = document.createElement("figure")
@@ -40,9 +39,8 @@ allfilter.addEventListener("click", () => {
 
 
 async function addfilteredworks(id){
-    let works
     const response = await fetch("http://localhost:5678/api/works")
-    works = await response.json()
+    const works = await response.json()
     gallery.innerHTML = ""
     for(let i = 0;i < works.length; i++){
         const idwork = works[i].categoryId
@@ -64,9 +62,8 @@ async function addfilteredworks(id){
 }
 
 async function addfilters(){
-    let categories
     const response = await fetch("http://localhost:5678/api/categories")
-    categories = await response.json()
+    const categories = await response.json()
     const filters = document.querySelector(".filters")
     for(let i = 0;i < categories.length; i++){
         const button = document.createElement("button")

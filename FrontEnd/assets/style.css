@@ -30,6 +30,10 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #FFFEF8;
+}
+a {
+	text-decoration: none;
 }
 ol, ul {
 	list-style: none;
@@ -56,7 +60,8 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	
 }
 section {
 	margin: 50px 0
@@ -88,6 +93,7 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+	gap: 30px;
 
 }
 nav li {
@@ -95,7 +101,12 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+nav a{
+	text-decoration: none;
+	color: black;
+}
+
+li:hover, nav a:hover {
 	color: #B1663C;
 }
 #introduction {
@@ -208,4 +219,58 @@ footer nav ul {
 .filters > .selected {
 	background-color: #1D6154;
 	color: white;
+}
+
+
+/*Login*/
+
+.logincontainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.titlelogin {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+#formlogin {
+	gap: 25px;
+	margin-top: 60px;
+}
+
+#formlogin, #formlogin div {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+
+#formlogin input[type="email"], #formlogin input[type="password"], #formlogin label {
+	width: 379px;
+}
+
+#formlogin label {
+	padding: 0 0 15px 0;
+}
+
+#formlogin input {
+	height: 51px;
+	border: none;
+	box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.09);
+}
+
+.logincontainer a {
+	display: flex;
+	justify-content: center;
+	color: black;
+}
+
+.hidden {
+	display: none;
+}
+
+#error {
+	justify-content: center;
+	color: #b62a00;
 }
