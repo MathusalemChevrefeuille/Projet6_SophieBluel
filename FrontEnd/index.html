@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/5b4fdb8be5.js" crossorigin="anonymous"></script>
 	<script src="./assets/index.js" defer></script>
 	<script src="./assets/Switchlogin.js" defer></script>
+	<script src="./assets/Editmod.js" defer></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
@@ -13,6 +15,45 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+	<aside class="modal">
+		<div class="modal-container modal-gallery ">
+			<h2>Galerie photo</h2>
+			<button class="close"><i class="fa-solid fa-xmark fa-xl"></i></button>
+			<div class="modal-gallery-photo">
+
+			</div>
+			<button class="button-add-photo">Ajouter une photo</button>
+		</div>
+		<div class="modal-container modal-add-photo ">
+			<h2>Ajout photo</h2>
+			<button class="back"><i class="fa-solid fa-arrow-left fa-xl"></i></button>
+			<button class="close"><i class="fa-solid fa-xmark fa-xl"></i></button>
+			<form class="add-form">
+				<div class="add-form-container">
+					<img src="./assets/images/picture-svgrepo-com 1.svg">
+					<label for="photoform">+ Ajouter photo</label>
+					<input id="photoform" name="image" type="file" required>
+					<p>jpg, png : 4mo max</p>
+				</div>
+				<label for="titleform">Titre</label>
+				<input id="titleform" name="title" type="text" title="Titre" required>
+				<label for="categoryform">Catégorie</label>
+				<select id="categoryform" name="category" required>
+				</select>
+				<div class="grey-line"></div>
+				<button class="button-add-photo ">Valider</button>
+			</form>
+		</div>
+	</aside>
+	<div class="editmodtop-container hidden">
+		<div class="editmodtop">
+			<div>
+				<i class="fa-regular fa-pen-to-square fa-sm"></i>
+				<p>Mode édition</p>
+			</div>
+		</div>
+		<div class="decal"></div>
+	</div>
 <header>
 	<a href="./index.html"><h1>Sophie Bluel <span>Architecte d'intérieur</span></h1></a>
 	<nav>
@@ -37,7 +78,15 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="portfoliotop">
+			<h2>Mes Projets</h2>
+			<div class="editmod-container hidden">
+				<div class="editmod">
+					<button class="editbutton"><i class="fa-regular fa-pen-to-square fa-lg"></i></button>
+					<button class="editbutton">modifier</button>
+				</div>
+			</div>
+		</div>
 		<div class="filters">
 			<button class="filter allfilter selected">Tous</button>
 		</div>

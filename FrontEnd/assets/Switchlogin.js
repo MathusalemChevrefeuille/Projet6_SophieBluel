@@ -1,4 +1,7 @@
 let log = document.querySelector(".login")
+let edittop = document.querySelector(".editmodtop-container")
+let edit = document.querySelector(".editmod-container")
+let filter = document.querySelector(".filters")
 
 if (window.localStorage.getItem("token") === null) {
     log.innerText = "login"
@@ -11,5 +14,8 @@ log.addEventListener("click", (event) => {
         event.preventDefault()
         localStorage.removeItem("token")
         log.innerText = "login"
+        edittop.classList.add("hidden")
+        edit.classList.add("hidden")
+        filter.classList.remove("hidden")
     }
 })
