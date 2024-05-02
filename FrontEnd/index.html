@@ -5,9 +5,9 @@
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/5b4fdb8be5.js" crossorigin="anonymous"></script>
-	<script src="./assets/index.js" defer></script>
+	<script src="./assets/index.js" type="module" defer></script>
 	<script src="./assets/Switchlogin.js" defer></script>
-	<script src="./assets/Editmod.js" defer></script>
+	<script src="./assets/Editmod.js" type="module" defer></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
@@ -15,33 +15,33 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-	<aside class="modal">
+	<aside class="modal hidden">
 		<div class="modal-container modal-gallery ">
 			<h2>Galerie photo</h2>
 			<button class="close"><i class="fa-solid fa-xmark fa-xl"></i></button>
 			<div class="modal-gallery-photo">
-
 			</div>
 			<button class="button-add-photo">Ajouter une photo</button>
 		</div>
-		<div class="modal-container modal-add-photo ">
+		<div class="modal-container modal-add-photo hidden">
 			<h2>Ajout photo</h2>
 			<button class="back"><i class="fa-solid fa-arrow-left fa-xl"></i></button>
 			<button class="close"><i class="fa-solid fa-xmark fa-xl"></i></button>
 			<form class="add-form">
 				<div class="add-form-container">
-					<img src="./assets/images/picture-svgrepo-com 1.svg">
-					<label for="photoform">+ Ajouter photo</label>
-					<input id="photoform" name="image" type="file" required>
-					<p>jpg, png : 4mo max</p>
+					<img class="img-add-form-container" src="./assets/images/picture-svgrepo-com 1.svg">
+					<label class="label-add-form-container" for="photoform">+ Ajouter photo</label>
+					<input class="hidden" id="photoform" name="image" type="file" accept="image/png, image/jpeg" >
+					<p class="p-add-form-container" >jpg, png : 4Mo max</p>
 				</div>
 				<label for="titleform">Titre</label>
-				<input id="titleform" name="title" type="text" title="Titre" required>
+				<input id="titleform" name="title" type="text" title="Titre" >
 				<label for="categoryform">Catégorie</label>
-				<select id="categoryform" name="category" required>
+				<select id="categoryform" name="category" >
+					<option value="0"></option>
 				</select>
 				<div class="grey-line"></div>
-				<button class="button-add-photo ">Valider</button>
+				<button class="button-submit-photo" type="submit">Valider</button>
 			</form>
 		</div>
 	</aside>

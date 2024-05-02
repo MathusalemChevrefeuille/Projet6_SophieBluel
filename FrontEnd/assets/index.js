@@ -1,5 +1,5 @@
 const gallery = document.querySelector(".gallery")
-async function addallworks(){
+export async function addallworks(){
     const response = await fetch("http://localhost:5678/api/works")
     const works = await response.json()
     gallery.innerHTML = ""

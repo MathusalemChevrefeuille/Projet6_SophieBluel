@@ -23,7 +23,7 @@ async function login() {
     if(retour.userId === 1){
         window.localStorage.setItem("token", retour.token)
         console.log("connecté")
-        window.location.href = "/FrontEnd/index.html"
+        window.location.href = "./index.html"
     }
     else{
         console.log("erreur")
