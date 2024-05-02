@@ -174,24 +174,31 @@ categoryform.addEventListener("change", () => {
     }
     checkform()
 })
-const addform = document.querySelector(".add-form")
-async function addworksinbackend(){
-    const Formdata = new FormData(addform)
 
-    Formdata.append("image", document.getElementById("photoform").value)
+
+async function addworksinbackend(){
+    const Formdata = new FormData()
+
+    Formdata.append("image", document.getElementById("photoform").files[0])
     Formdata.append("title", document.getElementById("titleform").value)
     Formdata.append("category", document.getElementById("categoryform").value)
-
 
     let token = window.localStorage.getItem("token")
     const response = await fetch("http://localhost:5678/api/works",{
         
         method: "POST",
         headers:{
-            "Authorization": "Bearer ${token}",
-            "Content-Type": "application/json"},
+            "Authorization": `Bearer ${token}`},
         body: Formdata
     })
+    if(response.status === 201){
+        addallworksmodal()
+        addallworks()
+        document.querySelector(".add-form").reset()
+        document.querySelector(".img-add-form-container").src="./assets/images/picture-svgrepo-com 1.svg"
+        labeladdformcontainer.classList.remove("hidden")
+        paddformcontainer.classList.remove("hidden")
+    }
 }
 
 
@@ -199,7 +206,5 @@ buttonsubmitphoto.addEventListener("click", (event) => {
     event.preventDefault()
     if (buttonsubmitphoto.classList.contains("greyed") === false) {
         addworksinbackend()
-        addallworksmodal()
-        addallworks()
     }
 })
