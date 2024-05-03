@@ -11,6 +11,16 @@ if (window.localStorage.getItem("token") !== null){
     filter2.classList.add("hidden")
 }
 
+async function deletework(id) {
+    let token = window.localStorage.getItem("token")
+    const response = await fetch("http://localhost:5678/api/works/" + id,{
+        method: "DELETE",
+        headers:{
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+        }
+    })
+}
 
 const modal_gallery_photo = document.querySelector(".modal-gallery-photo")
 async function addallworksmodal(){
@@ -18,9 +28,22 @@ async function addallworksmodal(){
     const works = await response.json()
     modal_gallery_photo.innerHTML = ""
     for(let i = 0;i < works.length; i++){
+        const imagemodalContainer = document.createElement("div")
+        imagemodalContainer.classList.add("image-modal-container")
         const image = document.createElement("img")
+        const Trashbin = document.createElement("button")
+        Trashbin.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
+        Trashbin.classList.add("Trashbin")
         image.src = works[i].imageUrl
-        modal_gallery_photo.appendChild(image)
+        modal_gallery_photo.appendChild(imagemodalContainer)
+        imagemodalContainer.appendChild(image)
+        imagemodalContainer.appendChild(Trashbin)
+
+        Trashbin.addEventListener("click", async () => {
+            await deletework(works[i]["id"])
+            await addallworksmodal()
+            await addallworks()
+        })
     }
 }
 
@@ -198,6 +221,9 @@ async function addworksinbackend(){
         document.querySelector(".img-add-form-container").src="./assets/images/picture-svgrepo-com 1.svg"
         labeladdformcontainer.classList.remove("hidden")
         paddformcontainer.classList.remove("hidden")
+        modal.classList.add("hidden")
+        modaladdphoto.classList.add("hidden")
+        modalgallery.classList.remove("hidden")
     }
 }
 

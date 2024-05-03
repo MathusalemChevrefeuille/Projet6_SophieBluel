@@ -99,12 +99,28 @@ table {
 	grid-row-gap: 20px;
 	border-bottom: 1px solid #B3B3B3;
 	padding-bottom: 50px;
+	position: relative;
 }
 
 .modal-gallery-photo img {
 	position: relative;
 	max-height: 102.57px;
 	max-width: 76.86px;
+}
+
+.image-modal-container{
+	position: relative;
+}
+
+.Trashbin {
+	position: absolute;
+	top: 5px;
+	right: 7px;
+	border: none;
+	border-radius: 5px;
+	background-color: black;
+	padding: 4px;
+	color: white;
 }
 
 .button-add-photo {
@@ -417,8 +433,8 @@ li:hover, nav a:hover {
 
 .gallery img {
 	width: 100%;
-
 }
+
 #contact {
 	width: 50%;
 margin: auto;
