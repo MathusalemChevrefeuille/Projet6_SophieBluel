@@ -218,7 +218,7 @@ async function addworksinbackend(){
         addallworksmodal()
         addallworks()
         document.querySelector(".add-form").reset()
-        document.querySelector(".img-add-form-container").src="./assets/images/picture-svgrepo-com 1.svg"
+        document.querySelector(".img-add-form-container").src="./assets/images/picture-svgrepo-com1.svg"
         labeladdformcontainer.classList.remove("hidden")
         paddformcontainer.classList.remove("hidden")
         modal.classList.add("hidden")
