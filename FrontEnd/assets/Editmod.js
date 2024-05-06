@@ -225,6 +225,9 @@ async function addworksinbackend(){
         modaladdphoto.classList.add("hidden")
         modalgallery.classList.remove("hidden")
     }
+    else{
+        alert("Envoit de l'image échoué")
+    }
 }
 
 
