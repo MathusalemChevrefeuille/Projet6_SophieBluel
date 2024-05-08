@@ -224,6 +224,10 @@ async function addworksinbackend(){
         modal.classList.add("hidden")
         modaladdphoto.classList.add("hidden")
         modalgallery.classList.remove("hidden")
+        photobol = false
+        titlebol = false
+        categorybol = false
+        checkform()
     }
     else{
         alert("Envoit de l'image échoué")

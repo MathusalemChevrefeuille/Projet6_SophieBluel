@@ -23,7 +23,7 @@ addallworks()
 
 
 function resetselectedfilter () {
-    tabfilter = document.querySelectorAll(".filter")
+     let tabfilter = document.querySelectorAll(".filter")
     for(let i = 0; i < tabfilter.length; i++){
         tabfilter[i].classList.remove("selected")
     }
